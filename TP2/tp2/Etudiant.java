@@ -2,30 +2,116 @@ package tp2;
 
 
 /**
- * Classe permettant la représentation d'un étudiant
+ * Classe permettant la representation d'un etudiant
  * @author Virginie Van den Schrieck
  */
 public class Etudiant {
 	//Variables d'instance
-	String nom;
-	String prénom;
-	int matricule;
-	//Cette variable d'instance est du type Date, disponible dans le même package
-	Date dateNaissance;
+	private String nom;
+	private String prenom;
+	private int matricule;
+	//Cette variable d'instance est du type Date, disponible dans le meme package
+	private Date dateNaissance;
 	
 	/*
-	 * Méthode main qui crée un étudiant et initialise les variables d'instance au départ de la ligne de commande
+	 * Methode main qui cree un etudiant et initialise les variables d'instance au depart de la ligne de commande
 	 * 
 	 */
 	public static void main(String[] args) {
 		Etudiant etu = new Etudiant();
-		etu.nom = args[0];
-		etu.prénom = args[1];
-		etu.matricule = Integer.parseInt(args[2]);
-		etu.dateNaissance = new Date();
-		etu.dateNaissance.jour = Integer.parseInt(args[3]);
-		etu.dateNaissance.mois = Integer.parseInt(args[4]);
-		etu.dateNaissance.année = Integer.parseInt(args[5]);
+		etu.setNom(args[0]);
+		etu.setPrenom(args[1]);
+		etu.setMatricule(Integer.parseInt(args[2]));
+		Date dateNaissance = new Date();
+		dateNaissance.jour = Integer.parseInt(args[3]);
+		dateNaissance.mois = Integer.parseInt(args[4]);
+		dateNaissance.annee = Integer.parseInt(args[5]);
+		System.out.println(etu);
+	}
+	
+	/**
+	 * @param nom
+	 * @param prenom
+	 * @param matricule
+	 * @param dateNaissance
+	 */
+	public Etudiant(String nom, String prenom, int matricule, Date dateNaissance) {
+		super();
+		setNom(nom);
+		setPrenom(prenom);
+		this.matricule = matricule;
+		this.dateNaissance = dateNaissance;
 	}
 
+	public Etudiant() {
+		super();
+		setNom("Campos Casares");
+		setPrenom("Melvin");
+	}
+	
+	/**
+	 * @return the name
+	 */
+	public String getNom() {
+		return nom;
+	}
+
+	/**
+	 * @param nom the name to set
+	 */
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	/**
+	 * @return the firstname
+	 */
+	public String getPrenom() {
+		return prenom;
+	}
+	
+	/**
+	 * @param prenom the firstname to set
+	 */
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
+	}
+
+	/**
+	 * @return the matricule
+	 */
+	public int getMatricule() {
+		return matricule;
+	}
+
+	/**
+	 * @param matricule the matricule to set
+	 */
+	public void setMatricule(int matricule) {
+		this.matricule = matricule;
+	}
+
+	/**
+	 * @return the birthdate
+	 */
+	public Date getDateNaissance() {
+		return dateNaissance;
+	}
+
+	/**
+	 * Permet de changer la date de naissance par une nouvelle date.
+	 * La date doit etre posterieur � 1900, sinon le changement n'est pas fait.
+	 * @param dateNaissance date dont l'ann�e est plus grande que 1900
+	 */
+	public void setDateNaissance(Date dateNaissance) {
+		if(dateNaissance.annee > 1900) {
+			this.dateNaissance = dateNaissance;
+		}
+		// else Notification d'erreur
+	}
+
+	@Override
+	public String toString() {
+		return "L'�tudiant s'appelle " + prenom  + " " + nom;
+	}
 }

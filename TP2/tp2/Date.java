@@ -6,7 +6,7 @@ package tp2;
 
 
 /**
- * Cette classe modélise une date de manière simplifiée.
+ * Cette classe modelise une date de maniere simplifiee.
  * @author Virginie Van den Schrieck
  *
  */
@@ -15,20 +15,20 @@ public class Date {
 	//variables d'instance
 	int jour;
 	int mois;
-	int année;
+	int annee;
 	
 	
 	
 	/**
-	 * La méthode main permet de tester la classe date en créant un objet 
-	 * au départ des arguments de la ligne de commande.  Trois arguments sont attendus, sous forme d'entiers : 
-	 * Le jour, le mois et l'année.  
+	 * La methode main permet de tester la classe date en creant un objet 
+	 * au depart des arguments de la ligne de commande.  Trois arguments sont attendus, sous forme d'entiers : 
+	 * Le jour, le mois et l'annee.  
 	 * @param args les arguments de la ligne de commande
 	 */
 	public static void main(String [] args) {
 		Date d = new Date();
 		d.jour = Integer.parseInt(args[0]);
 		d.mois = Integer.parseInt(args[1]);
-		d.année = Integer.parseInt(args[2]);
+		d.annee = Integer.parseInt(args[2]);
 	}
 }
