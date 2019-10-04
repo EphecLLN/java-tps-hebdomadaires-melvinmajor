@@ -1,13 +1,13 @@
 package tp2;
 
 /**
- * Cette classe modélise une calculatrice simplifiée avec une valeur courante et trois opérations. 
+ * Cette classe modelise une calculatrice simplifiee avec une valeur courante et trois operations. 
  * @author vvandens
  *
  */
 public class Calculatrice {
 
-	private double valeurCourante; // Stocke la valeur affichée sur l'écran de la calculatrice
+	private double valeurCourante; // Stocke la valeur affichee sur l'ecran de la calculatrice
 	
 	//Constructeurs
 	/**
@@ -29,13 +29,13 @@ public class Calculatrice {
 	//Getters and setters
 	
 	/**
-	 * @return la valeurCourante actuellement affichée sur la calculatrice
+	 * @return la valeurCourante actuellement affichee sur la calculatrice
 	 */
 	public double getValeurCourante() {
 		return valeurCourante;
 	}
 	/**
-	 * @param valeurCourante la nouvelle valeur à afficher sur la calculatrice
+	 * @param valeurCourante la nouvelle valeur a afficher sur la calculatrice
 	 */
 	public void setValeurCourante(double valeurCourante) {
 		this.valeurCourante = valeurCourante;
@@ -46,24 +46,24 @@ public class Calculatrice {
 	
 	
 	
-	//Méthodes
+	//Methodes
 	
 	/**
-	 * Additionne un nombre à la valeur courante
-	 * @param n le nombre à ajouter à la valeur courante de la calculatrice
+	 * Additionne un nombre a la valeur courante
+	 * @param n le nombre a ajouter a la valeur courante de la calculatrice
 	 */
 	public void ajoute(double n) {
 		valeurCourante+=n;
 	}
 	/**
-	 * Soustrait un nombre à la valeur courante
-	 * @param n le nombre à soustraire à la valeur courante de la calculatrice
+	 * Soustrait un nombre a la valeur courante
+	 * @param n le nombre a soustraire a la valeur courante de la calculatrice
 	 */
 	public void soustrait(double n) {
 		valeurCourante-=n;
 	}
 	/**
-	 * Elève la valeur courante au carré
+	 * Eleve la valeur courante au carre
 	 */
 	public void carre() {
 		valeurCourante*=valeurCourante;
@@ -71,14 +71,14 @@ public class Calculatrice {
 	
 	
 	/**
-	 * Renvoie une représentation textuelle de la valeur affichée sur la calculatrice
+	 * Renvoie une representation textuelle de la valeur affichee sur la calculatrice
 	 */
 	public String toString() {
 		return "La calculatrice affiche la valeur " + getValeurCourante();
 	}
 	
 	/**
-	 * Méthode main permettant de lancer un test rapide de la classe calculatrice.
+	 * Methode main permettant de lancer un test rapide de la classe calculatrice.
 	 * @param args les arguments de la ligne de commande
 	 */
 	public static void main(String[] args) {
@@ -93,12 +93,12 @@ public class Calculatrice {
 		System.out.println(myCalc);
 		
 		
-		//Calculatrice myCalc = new Calculatrice(125);
-		//System.out.println(myCalc.valeurCourante);
+		Calculatrice myNewCalc = new Calculatrice(125);
+		System.out.println(myNewCalc.valeurCourante);
 		
-//		myCalc.ajoute(5);
-//		myCalc.soustrait(2);
-//		System.out.println(myCalc.valeurCourante);
+		myNewCalc.ajoute(5);
+		myNewCalc.soustrait(2);
+		System.out.println(myNewCalc.valeurCourante);
 	}
 
 }

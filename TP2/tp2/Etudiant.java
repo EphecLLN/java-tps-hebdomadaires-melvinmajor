@@ -23,9 +23,9 @@ public class Etudiant {
 		etu.setPrenom(args[1]);
 		etu.setMatricule(Integer.parseInt(args[2]));
 		Date dateNaissance = new Date();
-		dateNaissance.jour = Integer.parseInt(args[3]);
-		dateNaissance.mois = Integer.parseInt(args[4]);
-		dateNaissance.annee = Integer.parseInt(args[5]);
+		dateNaissance.setJour(Integer.parseInt(args[3]));
+		dateNaissance.setMois(Integer.parseInt(args[4]));
+		dateNaissance.setAnnee(Integer.parseInt(args[5]));
 		System.out.println(etu);
 	}
 	
@@ -104,7 +104,7 @@ public class Etudiant {
 	 * @param dateNaissance date dont l'année est plus grande que 1900
 	 */
 	public void setDateNaissance(Date dateNaissance) {
-		if(dateNaissance.annee > 1900) {
+		if(dateNaissance.getAnnee() > 1900) {
 			this.dateNaissance = dateNaissance;
 		}
 		// else Notification d'erreur
